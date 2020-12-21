@@ -1,14 +1,12 @@
 const siteMetadata = {
-  title: `The Localhost Blog`,
+  title: `The Code Less Traveled`,
   description: `This is my coding blog where I write about my coding journey.`,
 };
 
 module.exports = {
-  siteMetadata: {
-    title: `The Localhost Blog`,
-    description: `This is my coding blog where I write about my coding journey.`,
-  },
+  siteMetadata,
   plugins: [
+    `gatsby-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
