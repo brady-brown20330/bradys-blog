@@ -2,9 +2,10 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
-import styled from 'styled-components';
 import { Layout } from '../components/Layout';
 import Dump from '../components/Dump';
+// import SEO from '../react-seo-component';
+import styled from 'styled-components';
 
 const IndexWrapper = styled.main``;
 
@@ -15,9 +16,27 @@ const Image = styled(Img)`
 `;
 
 export default ({data}) => {
-  console.log(data)
+
+  const {
+    description,
+    title,
+    image,
+    siteUrl,
+    siteLanguage,
+    siteLocale,
+    twitterUsername,
+  } = useSiteMetadata()
+
   return (
     <Layout>
+      <Dump
+        title={title}
+        description={description}
+        image={`${siteUrl}${image}`}
+        pathname={siteUrl}
+        siteLanguage={siteLanguage}
+        siteLocale={siteLocale}
+      />
     <IndexWrapper>
       {data.allMdx.nodes.map(
         ({ id, excerpt, frontmatter, fields }) => (
