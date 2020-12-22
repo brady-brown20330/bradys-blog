@@ -1,6 +1,6 @@
 import { MDXProvider } from '@mdx-js/react';
-import Highlight, { defaultProps } from 'prism-react-renderer';
-import theme from 'prism-react-renderer/themes/dracula';
+// import Highlight, { defaultProps } from 'prism-react-renderer';
+// import theme from 'prism-react-renderer/themes/dracula';
 import React from 'react';
 import Code from './src/components/Code';
 
