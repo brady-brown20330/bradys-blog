@@ -2,6 +2,7 @@ import Highlight, { defaultProps } from 'prism-react-renderer';
 import theme from 'prism-react-renderer/themes/nightOwl';
 import React from 'react';
 import styled from 'styled-components';
+import { copyToClipboard } from '../utils/copy-to-clipboard';
 
 export const Pre = styled.pre`
   text-align: left;
@@ -24,7 +25,23 @@ export const LineNo = styled.span`
   opacity: 0.3;
 `;
 
-const Code = ({ codeString, language, ...props }) => {
+const CopyCode = styled.button`
+  position: absolute;
+  right: 0.25rem;
+  border: 0;
+  border-radius: 3px;
+  margin: 0.25em;
+  opacity: 0.3;
+  &:hover {
+    opacity: 1;
+  }
+`;
+
+const Code = ({ codeString, language }) => {
+  const handleClick = () => {
+    copyToClipboard(codeString);
+  };
+
   return (
     <Highlight
       {...defaultProps}
@@ -39,6 +56,7 @@ const Code = ({ codeString, language, ...props }) => {
         getTokenProps,
       }) => (
         <Pre className={className} style={style}>
+          <CopyCode onClick={handleClick}>Copy</CopyCode>
           {tokens.map((line, i) => (
             <div {...getLineProps({ line, key: i })}>
               <LineNo>{i + 1}</LineNo>
