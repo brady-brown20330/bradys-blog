@@ -1,0 +1,298 @@
+---
+title: Initial Repo Setup
+date: 2020-12-23
+published: true
+---
+
+In this post, I'm going to go over how to create your very own reusable project base. This code is designed to be used to build out a React app, but with a few modifications other frameworks could be substituted.
+
+We will start with a blank repository, and work our way up to a 'Hello World' app using React, Node, Express, Webpack and other relevant technologies.
+
+## Some reasons to create your next project from scratch include:
+
+  - You will have complete control over what frameworks and extensions are included in your project.
+
+  - You will gain an understanding of the building blocks of Full-stack Javascript projects, things that perplex even experienced programmers such as Webpack, Babel and Package.json files.
+
+  - By following this tutorial you'll have built out something that's all your own, and something that you can modify and use for years to come.
+
+  - It's your job to know how these things work, and knowing how Javascript projects work at a very basic level will make you a better programmer!
+
+## If this interests you, let's jump right in.
+
+The first thing youre going to do is initialize an empty repository on Github. To create a new repository hit the green 'New' button on the left of your homepage.
+
+I am going to name this repo react-app-starter, and add a README.MD.
+
+Once you've created your repo, clone it down to your machine, the command should look something like this:
+
+`git clone https://github.com/brady-brown20330/react-app-starter.git`
+
+Once that command runs, you should be able to open it up in your code editor of choice (I'll be using VS Code).
+
+Now that we have our repository opened up, were ready to build out the skeleton that will support our project: The file structure. We will be doing this strictly from the command line, using the commands `mkdir` and `touch`.
+
+Well start from the root directory, and work our way into the folders as we go.
+
+Were goig to make four folders in our root directory:
+
+- dist: This holds our main.js file, which has to do with our webpack.config.
+
+- public: This will hold our index.html, css file, and bundle.js.
+
+- server: This is where well put all files relevant to the backend, which we will build out using Node.js and Express.
+
+- src: This will hold our app and all of the components that go along with it, as well as the index.js file (well get into what that is in a bit).
+
+To create these first folders, make sure you are in the root directory of your project, and run this command:
+
+`mkdir -p dist public server src/components`
+
+Using the -p flag will allow the terminal to create parent directories if they do'nt yet exist.
+
+Next were going to create some basic files to help our project run:
+
+- .babelrc: This file will allow any ES6+ code to be backwards compatible with older browsers, such as Internet Explorer.
+
+- .gitignore: Lists any files we dont want to commit, files that are too large such as our node_modules, or files that contain sensitive information such as API keys.
+
+- package.json: Contains all of our dependencies, as well as scripts to build and run our project.
+
+- webpack.config.js: This will govern how and where a web browser looks at our project.
+
+Create these files now with this command:
+
+`touch .babelrc .gitignore package.json webpack.config.js`
+
+If you havent already, now would be a good time to run `npm init`. This will fill your package.json file with the most basic information about your project. Just click through all of the options for now, as well dig into the package.json more a bit later.
+
+Now that we have that out of the way, lets begin to fill the files in our root directory. Once we do this, it should be generally smooth sailing.
+
+Well start with the .babelrc file. As I mentioned previously, babel is going to allow older web browsers to read our extremely new fangled and bleeding edge code. The actual code for this portion is pretty simple, just a few lines that will give babel a preset to start with.
+
+Copy and paste this into your .babelrc file, and don't forget to save as you go:
+
+```jsx react
+{
+  "presets": ["@babel/env", "@babel/preset-react"]
+}
+```
+Not too tough, huh? Next lets deal with the .gitignore, which will tell Github (or your version control software of choice) which files it ought to ignore during the commiting process.
+
+For now, we can simply add in our node_modules folder, package-lock.json (which will be created once we intall some dependencies), and the dist folder, since that will contain a pretty lengthy file.
+
+Your .gitignore should look like this:
+
+```.gitignore
+node_modules
+dist
+package-lock.json
+```
+Were going to deal with the webpack.config.js file next. After that well be ready to install some dependencies and get this app up on localhost.
+
+Webpack gives us a way to compile all of the Javascript into one file that can be served up and viewed in a browser (once we get into the package.json well do this with the build command). If we tell it to, webpack can also watch the project files for changes, and rebuild as necessery.
+
+For now, copy and paste this into your webpack.config.js:
+
+```js
+const path = require("path");
+const webpack = require("webpack");
+
+module.exports = {
+  entry: {
+    main: path.resolve(__dirname + '/src/index.js')
+  },
+  mode: "development",
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /(node_modules|bower_components)/,
+        loader: "babel-loader",
+        options: { presets: ['@babel/preset-react', '@babel/preset-env'] }
+      },
+      {
+        test: /\.css$/,
+        use: ["style-loader", "css-loader"]
+      }
+    ]
+  },
+  resolve: { extensions: ["*", ".js", ".jsx"] },
+  output: {
+    path: path.resolve(__dirname + "/public"),
+    publicPath: "/public/",
+    filename: "bundle.js"
+  }
+};
+```
+The last file we have to deal with at the root level is the package.json. Since we've already run `npm init`, all we're going to do now is install some dependencies that are common to Full-stack React applications. These will be broken own into two categories; as defined by the npmjs docs:
+
+- dependencies:  Packages required by your application in production.
+
+- devdependencies: Packages that are only needed for local development and testing.
+
+We can accomplish this with two commands for the sake of clarity:
+
+dependencies:
+`npm i axios body-parser express node nodemon path react react-dom --save`
+
+devdependencies:
+`npm i @babel/cli @babel/core @babel/preset-env @babel/preset-react babel-loader css-loader style-loader webpack webpack-cli webpack-dev-server --save-dev`
+
+As long as were in here, lets also add a command that well run on order to start this project. In the "scripts" object, add the following command:
+
+```jsx react
+"start": "(webpack --watch) & nodemon server/server.js"
+```
+IMPORTANT: Usually this command would have a -d flag, which adds devtool support for debuggin purposes. This flag is now more difficult to use with the release of Webpack 5, you can read more about the Webpack devtools here: https://webpack.js.org/configuration/devtool/
+
+After you've run those two commands, your package.json should look like this:
+
+```jsx react
+{
+  "name": "react-app-starter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "(webpack --watch) & nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brady-brown20330/react-app-starter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brady-brown20330/react-app-starter/issues"
+  },
+  "homepage": "https://github.com/brady-brown20330/react-app-starter#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "node": "^15.4.0",
+    "nodemon": "^2.0.6",
+    "path": "^0.12.7",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.0.1",
+    "style-loader": "^2.0.0",
+    "webpack": "^5.11.0",
+    "webpack-cli": "^4.2.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
+```
+
+You should also see a package-lock.json, which contains more detailed information about the packages you have installed, as well as a node_modules folder, which holds all of the actual packages.
+
+Whew! Now that we have that out of the way, we can move on to the final step of the process, which is building out the Frontend, which will render a simple `Hello World`, and our server, which will serve it up using a port that we specify.
+
+Starting with the public folder, lets start adding some muscke onto our scrawny project.
+
+`touch public/App.css public/index.html`
+
+Into your newly created App.css file, add in this code:
+
+```css
+.app {
+  text-align: center;
+  width: 100%;
+  color: azure;
+  background-color: royalblue;
+  border-radius: 5px 5px 0 0;
+  margin-bottom: 0px;
+}
+
+```
+
+This will ensure that our styles are being loaded correctly.
+
+Into your index.html, add the following code:
+
+```html
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Foundation Code</title>
+</head>
+<body>
+  <div id='root'></div>
+  <link rel="stylesheet" href="App.css">
+  <script src="./bundle.js"></script>
+</body>
+</html>
+```
+Now on to the server!
+
+create a server.js file by running `touch server/server.js` and paste in the following code:
+
+```jsx react
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 8080;
+const path = require("path");
+
+app.listen(PORT, () => {
+  console.log(`Hello, Your server is running on PORT: ${PORT}`);
+});
+```
+
+Great! Final step now is to build out the src folder, which needs two files: App.jsx and index.js. Create these two files by running `touch src/App.jsx src/index.js`.
+
+Into your index.js, paste the following code:
+
+```jsx react
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App.jsx";
+
+ReactDOM.render(<App />, document.getElementById("root"));
+```
+This is basically goung to search out index.html for a div with an Id of root. Once it finds that div, the index.js is going to tack our App component onto that div.
+
+Lets build out that App component now!
+
+Paste the following into your App.jsx file:
+
+```jsx react
+import React, { useEffect, useState } from "react";
+
+const App = () => {
+
+  return (
+    <div className="app">Hello World!</div>
+  )
+}
+
+export default App;
+```
+The above code is a functional component, and  on line one we are importing the UseState and UseEffect hooks. If youre unfamilliar with React Hooks, we can build this as a Class component like so:
+
+```jsx react
+import React from 'react'
+
+class App extends React.Component {
+
+  render () {
+    return (
+        return (
+    <div className="app">Hello World!</div>
+  )
+    )
+  }
+}
+
+export default App;
+```
