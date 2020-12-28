@@ -11,7 +11,6 @@ export default ({ data, pageContext }) => {
     siteUrl,
     siteLanguage,
     siteLocale,
-    twitterUsername,
     authorName,
   } = useSiteMetadata();
   const { frontmatter, body, fields, excerpt } = data.mdx;
@@ -30,7 +29,6 @@ export default ({ data, pageContext }) => {
         pathname={`${siteUrl}${fields.slug}`}
         siteLanguage={siteLanguage}
         siteLocale={siteLocale}
-        twitterUsername={twitterUsername}
         author={authorName}
         article={true}
         publishedDate={date}

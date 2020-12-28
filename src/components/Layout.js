@@ -4,8 +4,10 @@ import { useSiteMetadata } from '../hooks/useSiteMetadata';
 import { Header } from './Header';
 
 const AppStyles = styled.main`
-  max-width: 540px;
+  max-width: 70%;
   margin: 0 auto;
+  font-family: monospace;
+
 `;
 
 export const Layout = ({ children }) => {

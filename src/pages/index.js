@@ -3,13 +3,14 @@ import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
 import { Layout } from '../components/Layout';
-import Dump from '../components/Dump';
 import SEO from 'react-seo-component';
 import styled from 'styled-components';
 
-const IndexWrapper = styled.main``;
+const IndexWrapper = styled.main`
+`;
 
-const PostWrapper = styled.div``;
+const PostWrapper = styled.div`
+`;
 
 const Image = styled(Img)`
   border-radius: 5px;
@@ -24,7 +25,6 @@ export default ({data}) => {
     siteUrl,
     siteLanguage,
     siteLocale,
-    twitterUsername,
   } = useSiteMetadata()
 
   return (

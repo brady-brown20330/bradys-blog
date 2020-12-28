@@ -2,7 +2,7 @@ const siteMetadata = {
   title: `The Code Less Travelled.`,
   description: `This is my coding blog where I write about my coding journey.`,
   image: `/default-site-image.jpg`,
-  siteUrl: `https://thelocalhost.blog`,
+  siteUrl: `https://bradys-blog.netlify.app/`,
   siteLanguage: `en-US`,
   siteLocale: `en_us`,
   authorName: `Brady Brown`,
