@@ -12,7 +12,8 @@ const AppStyles = createGlobalStyle`
     align-items: center;
     justify-content: center;
     background-color:  #22223B;
-    color: white;
+    color: azure;
+    font-family: ubuntu;
   }
   a:link {
     color: #B3C2F2;
