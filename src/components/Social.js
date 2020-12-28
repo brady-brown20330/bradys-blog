@@ -2,26 +2,28 @@ import React from 'react';
 import styled from 'styled-components';
 
 const LinkContainer = styled.div`
-display: flex;
-align-items: center;
-justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 
 const Link = styled.a`
-padding-left: 50px;
-padding-right: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
+  background-color: #22223B;
+  background-blend-mode: darken;
 `
 
 const LinkImg = styled.img`
-height: 43px;
-width: 50px;
-background-blend-mode: lighten;
+  height: 85px;
+  width: 100px;
 `
+
 export const Social = () => {
   return (
     <LinkContainer>
 
-    <Link target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/brady-c-brown/" background-image="">
+    <Link target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/brady-c-brown/">
       <LinkImg src="https://social-link-icons.s3.us-east-2.amazonaws.com/LI-In-Bug.png" alt="Linkedin"/>
     </Link>
 

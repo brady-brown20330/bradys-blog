@@ -10,6 +10,9 @@ import { Social } from '../components/Social'
 
 
 const IndexWrapper = styled.main`
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 `;
 
 const PostWrapper = styled.div`
@@ -18,6 +21,17 @@ const PostWrapper = styled.div`
 const Image = styled(Img)`
   border-radius: 5px;
 `;
+
+const Divider = styled.div`
+margin: 15px;
+  padding: 15px;
+  font-family: ubuntu;
+  font-weight: bolder;
+  font-style: oblique;
+  display: flex;
+  font-size: 36px;
+  border-top: 2px groove azure;
+`
 
 export default ({data}) => {
 
@@ -31,7 +45,6 @@ export default ({data}) => {
   } = useSiteMetadata()
 
   return (
-
     <Layout>
       <SEO
         title={title}
@@ -42,6 +55,7 @@ export default ({data}) => {
         siteLocale={siteLocale}
       />
       <Social />
+      <Divider>Articles Below:</Divider>
     <IndexWrapper>
       {data.allMdx.nodes.map(
         ({ id, excerpt, frontmatter, fields }) => (
