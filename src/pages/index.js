@@ -3,9 +3,11 @@ import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
 import styled from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 import SEO from 'react-seo-component';
 import { Layout } from '../components/Layout';
 import { Social } from '../components/Social'
+
 
 const IndexWrapper = styled.main`
 `;
@@ -29,6 +31,7 @@ export default ({data}) => {
   } = useSiteMetadata()
 
   return (
+
     <Layout>
       <SEO
         title={title}

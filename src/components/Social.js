@@ -1,13 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-/*
-const AppStyles = styled.main`
-  max-width: 70%;
-  margin: 0 auto;
-  font-family: monospace;
-
-`;
-*/
 
 const LinkContainer = styled.div`
 display: flex;
