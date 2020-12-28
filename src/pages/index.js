@@ -45,7 +45,14 @@ export default ({data}) => {
         <img src="https://social-link-icons.s3.us-east-2.amazonaws.com/pdf-icon.png" style={{width:"50px", height:"40px"}} alt="Resume"/>
       </a>
 
-      <a id="emailMe" href="mailto:brownb202@gmail.com">
+      <a target="_blank" rel="noreferrer"
+       onClick={function() {
+        window.open('https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=brownb202@gmail.com&su=Hey Brady&body=Hey Brady, I was just looking at your portfolio site and I think it\'s really Neat!',
+        'newwindow',
+        'width=500,height=600');
+         return false;
+       }}
+      >
         <img src="https://social-link-icons.s3.us-east-2.amazonaws.com/email-image.png" style={{width:"50px", height:"40px"}} alt="Email Me!"/>
       </a>
 
