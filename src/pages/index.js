@@ -16,9 +16,12 @@ const IndexWrapper = styled.main`
 `;
 
 const PostWrapper = styled.div`
+  background-color: #34345B;
+  border-radius: 5px;
 `;
 
 const Image = styled(Img)`
+  max-height: 250px;
   border-radius: 5px;
 `;
 
