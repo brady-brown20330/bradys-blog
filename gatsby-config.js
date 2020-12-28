@@ -1,6 +1,6 @@
 const siteMetadata = {
-  title: `The Code Less Travelled.`,
-  description: `This is my coding blog where I write about my coding journey.`,
+  title: `Brady Brown's Blog & Portfilio Site`,
+  description: `This website is a place for me to showcase things that I'm working on, and a side project to help practice programming.`,
   image: `/default-site-image.jpg`,
   siteUrl: `https://bradys-blog.netlify.app/`,
   siteLanguage: `en-US`,
@@ -42,6 +42,16 @@ module.exports = {
         path: `${__dirname}/posts`,
         name: `posts`,
       },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `limelight`,
+          `source sans pro\:300,400,400i,700` // you can also specify font weights and styles
+        ],
+        display: 'swap'
+      }
     },
   ],
 };

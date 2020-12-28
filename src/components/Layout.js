@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
 import { Header } from './Header';
 import { createGlobalStyle } from 'styled-components'

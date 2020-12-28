@@ -1,6 +1,6 @@
 #To run this repo:
 
-1. yarn install
+1. npm install
 
 2. yarn build
 

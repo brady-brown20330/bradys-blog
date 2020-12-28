@@ -15,12 +15,13 @@ padding-right: 50px;
 const LinkImg = styled.img`
 height: 43px;
 width: 50px;
+background-blend-mode: lighten;
 `
 export const Social = () => {
   return (
     <LinkContainer>
 
-    <Link target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/brady-c-brown/">
+    <Link target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/brady-c-brown/" background-image="">
       <LinkImg src="https://social-link-icons.s3.us-east-2.amazonaws.com/LI-In-Bug.png" alt="Linkedin"/>
     </Link>
 
