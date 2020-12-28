@@ -37,6 +37,22 @@ export default ({data}) => {
         siteLanguage={siteLanguage}
         siteLocale={siteLocale}
       />
+      <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/brady-c-brown/">
+        <img src="https://social-link-icons.s3.us-east-2.amazonaws.com/LI-In-Bug.png" style={{width:"50px", height:"40px"}} alt="Linkedin"/>
+      </a>
+
+      <a target="_blank" rel="noreferrer" href="https://social-link-icons.s3.us-east-2.amazonaws.com/Brady's+Resume.pdf">
+        <img src="https://social-link-icons.s3.us-east-2.amazonaws.com/pdf-icon.png" style={{width:"50px", height:"40px"}} alt="Resume"/>
+      </a>
+
+      <a id="emailMe" href="mailto:brownb202@gmail.com">
+        <img src="https://social-link-icons.s3.us-east-2.amazonaws.com/email-image.png" style={{width:"50px", height:"40px"}} alt="Email Me!"/>
+      </a>
+
+      <a target="_blank" rel="noreferrer" href="https://www.strava.com/athletes/brady-brown">
+        <img src="https://social-link-icons.s3.us-east-2.amazonaws.com/Strava_logo-512.png" style={{width:"50px", height:"40px"}} alt="Race Me!"/>
+      </a>
+
     <IndexWrapper>
       {data.allMdx.nodes.map(
         ({ id, excerpt, frontmatter, fields }) => (
