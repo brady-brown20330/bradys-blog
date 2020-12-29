@@ -12,7 +12,7 @@ const Link = styled.a`
 `
 
 const LinkImg = styled.img`
-  width: 30%;
+  width: 20%;
   height: auto;
   display: block;
   margin: 0 auto;

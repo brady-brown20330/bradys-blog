@@ -16,7 +16,7 @@ const IndexWrapper = styled.main`
 `;
 
 export const PostWrapper = styled.div`
-  background-color: #E5E5E5;
+
   border-radius: 5px;
 `;
 
@@ -61,6 +61,8 @@ export default ({data}) => {
     <IndexWrapper>
       {data.allMdx.nodes.map(
         ({ id, excerpt, frontmatter, fields }) => (
+          <div>
+                      <Divider />
           <PostWrapper key={id}>
             <Link to={fields.slug}>
             {
@@ -72,6 +74,7 @@ export default ({data}) => {
               <p>{excerpt}</p>
             </Link>
           </PostWrapper>
+          </div>
         )
       )}
     </IndexWrapper>
