@@ -28,9 +28,8 @@ const Image = styled(Img)`
 const Divider = styled.div`
 margin: 15px;
   padding: 15px;
-  font-family: ubuntu;
+  font-family: Arvo;
   font-weight: bolder;
-  font-style: oblique;
   display: flex;
   font-size: 36px;
   border-top: 2px groove azure;
@@ -58,7 +57,7 @@ export default ({data}) => {
         siteLocale={siteLocale}
       />
       <Social />
-      <Divider>Articles Below:</Divider>
+      <Divider>Have a Read Feller:</Divider>
     <IndexWrapper>
       {data.allMdx.nodes.map(
         ({ id, excerpt, frontmatter, fields }) => (

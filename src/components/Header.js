@@ -3,9 +3,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Title = styled.h1`
-  font-family: ubuntu;
+  font-family: Arvo;
   font-weight: bolder;
-  font-style: oblique;
   text-decoration: none !important;
   display: flex;
   justify-content: center;
@@ -14,7 +13,7 @@ const Title = styled.h1`
 `
 
 const Subtitle = styled.p`
-  font-family: ubuntu;
+  font-family: Arvo;
   display: flex;
   justify-content: center;
   text-align: center;

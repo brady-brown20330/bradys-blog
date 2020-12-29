@@ -48,7 +48,8 @@ module.exports = {
       options: {
         fonts: [
           `Ubuntu`,
-          `limelight` // you can also specify font weights and styles
+          `limelight`,
+          'Arvo' // you can also specify font weights and styles
         ],
         display: 'swap'
       }

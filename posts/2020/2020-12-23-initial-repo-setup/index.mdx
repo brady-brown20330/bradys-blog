@@ -20,33 +20,25 @@ In this post, I'm going to go over how to create your very own reusable starter 
 
 The first thing youre going to do is initialize an empty repository on Github. To create a new repository hit the green 'New' button on the left of your homepage.
 
-I am going to name this repo react-app-starter, and add a README.MD.
-
-Once you've created your repo, clone it down to your machine, the command should look something like this:
+I am going to name this repo react-app-starter, and add a README.md. Once you've created your repo, clone it down to your machine, the command should look something like this:
 
 `git clone https://github.com/brady-brown20330/react-app-starter.git`
 
-Once that command runs, you should be able to open it up in your code editor of choice (I'll be using VS Code).
+Now open up your repository and we'll be ready to build out the skeleton that will support our project. We will be doing this strictly from the command line (so we FEEL like hackers) using the commands `mkdir` and `touch`.
 
-Now that we have our repository opened up, were ready to build out the skeleton that will support our project: The file structure. We will be doing this strictly from the command line, using the commands `mkdir` and `touch`.
-
-Well start from the root directory, and work our way into the folders as we go.
-
-Were goig to make four folders in our root directory:
-
-- dist: This holds our main.js file, which has to do with our webpack.config.
+Were going to make three folders in our root directory:
 
 - public: This will hold our index.html, css file, and bundle.js.
 
 - server: This is where well put all files relevant to the backend, which we will build out using Node.js and Express.
 
-- src: This will hold our app and all of the components that go along with it, as well as the index.js file (well get into what that is in a bit).
+- src: This will hold our app and all of the components that go along with it, as well as the index.js file which will serve as the entry point into our app.
 
 To create these first folders, make sure you are in the root directory of your project, and run this command:
 
-`mkdir -p dist public server src/components`
+`mkdir -p public server src/components`
 
-Using the -p flag will allow the terminal to create parent directories if they do'nt yet exist.
+Using the -p flag will allow the terminal to create parent directories if they don't yet exist.
 
 Next were going to create some basic files to help our project run:
 
@@ -123,7 +115,7 @@ module.exports = {
   }
 };
 ```
-The last file we have to deal with at the root level is the package.json. Since we've already run `npm init`, all we're going to do now is install some dependencies that are common to Full-stack React applications. These will be broken own into two categories; as defined by the npmjs docs:
+The last file we have to deal with at the root level is the package.json. Since we've already run `npm init`, all we're going to do now is install some dependencies that are common to Full-stack React applications. These will be broken own into two categories; as defined by the npm docs:
 
 - dependencies:  Packages required by your application in production.
 
@@ -195,7 +187,7 @@ You should also see a package-lock.json, which contains more detailed informatio
 
 Whew! Now that we have that out of the way, we can move on to the final step of the process, which is building out the Frontend, which will render a simple `Hello World`, and our server, which will serve it up using a port that we specify.
 
-Starting with the public folder, lets start adding some muscke onto our scrawny project.
+Starting with the public folder, lets start adding some muscle onto our project.
 
 `touch public/App.css public/index.html`
 

@@ -11,7 +11,7 @@ const AppStyles = createGlobalStyle`
     justify-content: center;
     background-color:  #E5E5E5;
     color: #14213D;
-    font-family: ubuntu;
+    font-family: Arvo;
   }
   a:link {
     color: #14213D;
