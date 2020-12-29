@@ -10,7 +10,7 @@ const LinkContainer = styled.div`
 const Link = styled.a`
   padding-left: 50px;
   padding-right: 50px;
-  background-color: #22223B;
+  background-color: none;
   background-blend-mode: darken;
 `
 

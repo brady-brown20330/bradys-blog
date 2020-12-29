@@ -3,11 +3,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Title = styled.h1`
-  color: #FC7753;
   font-family: ubuntu;
   font-weight: bolder;
   font-style: oblique;
-  text-decoration: #FC7753;
+  text-decoration: none !important;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -15,18 +14,22 @@ const Title = styled.h1`
 `
 
 const Subtitle = styled.p`
-  color: azure;
   font-family: ubuntu;
-  text-decoration: none;
   display: flex;
   justify-content: center;
   text-align: center;
 `
+
+const HeaderWrapper = styled.div`
+  text-decoration: none !important;
+`
+
 export const Header = ({ siteTitle, siteDescription }) => (
-<div>
+<HeaderWrapper>
   <Link to="/">
-    <Title>{siteTitle}</Title>
+    <Title style={{}}>{siteTitle}</Title>
+    <Subtitle>{siteDescription}</Subtitle>
   </Link>
-  <Subtitle>{siteDescription}</Subtitle>
-</div>
+
+</HeaderWrapper>
 );

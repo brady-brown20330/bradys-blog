@@ -15,8 +15,8 @@ const IndexWrapper = styled.main`
   text-align: center;
 `;
 
-const PostWrapper = styled.div`
-  background-color: #34345B;
+export const PostWrapper = styled.div`
+  background-color: #E5E5E5;
   border-radius: 5px;
 `;
 

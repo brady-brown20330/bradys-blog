@@ -1,22 +1,18 @@
 ---
-title: Initial Repo Setup
+title: Creating Your Own Starter Code
 date: 2020-12-23
 published: true
 cover: ./cover.jpg
 coverCredit: Photo by Dmitrii Pashutskii on Unsplash
 ---
 
-In this post, I'm going to go over how to create your very own reusable project base. This code is designed to be used to build out a React app, but with a few modifications other frameworks could be substituted.
-
-We will start with a blank repository, and work our way up to a 'Hello World' app using React, Node, Express, Webpack and other relevant technologies.
+In this post, I'm going to go over how to create your very own reusable starter code. This code is designed to be used to build out a React app, but with a few modifications other frameworks could be substituted. Were going to start with a blank repository, and work our way up to getting a `Hello World!` message in the browser.
 
 ## Some reasons to create your next project from scratch include:
 
-  - You will have complete control over what frameworks and extensions are included in your project.
+  - No fluff! You will have complete control over what goes into your project.
 
-  - You will gain an understanding of the building blocks of Full-stack Javascript projects, things that perplex even experienced programmers such as Webpack, Babel and Package.json files.
-
-  - By following this tutorial you'll have built out something that's all your own, and something that you can modify and use for years to come.
+  - This code will be reusable - you can use it for personal projects, coding challanges and the like.
 
   - It's your job to know how these things work, and knowing how Javascript projects work at a very basic level will make you a better programmer!
 
@@ -74,7 +70,7 @@ Well start with the .babelrc file. As I mentioned previously, babel is going to 
 
 Copy and paste this into your .babelrc file, and don't forget to save as you go:
 
-```jsx react
+```js
 {
   "presets": ["@babel/env", "@babel/preset-react"]
 }
@@ -96,7 +92,7 @@ Webpack gives us a way to compile all of the Javascript into one file that can b
 
 For now, copy and paste this into your webpack.config.js:
 
-```js
+```js express
 const path = require("path");
 const webpack = require("webpack");
 

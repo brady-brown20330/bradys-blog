@@ -1,35 +1,41 @@
 import React from 'react';
-// import styled from 'styled-components';
+import styled from 'styled-components';
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
 import { Header } from './Header';
 import { createGlobalStyle } from 'styled-components'
 
 const AppStyles = createGlobalStyle`
   body {
-    max-width: 70%;
-    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:  #22223B;
-    color: azure;
+    background-color:  #E5E5E5;
+    color: #14213D;
     font-family: ubuntu;
   }
   a:link {
-    color: #B3C2F2;
+    color: #14213D;
   }
   a:visited {
-    color: #4A4E69;
+    color: #14213D;
   }
 `
-
+const PostBodyWrapper = styled.div`
+  background-color: #FFFFFF;
+  border-radius: 5px;
+  max-width: 85%;
+  margin: auto;
+  padding: 10px;
+`
 export const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
-    <div>
-    <AppStyles/>
+<div>
+<AppStyles/>
           <Header siteTitle={title} siteDescription={description} />
-          {children}
-    </div>
+          <PostBodyWrapper>
+            {children}
+          </PostBodyWrapper>
+</div>
   );
 };
