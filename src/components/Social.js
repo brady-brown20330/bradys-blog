@@ -2,21 +2,20 @@ import React from 'react';
 import styled from 'styled-components';
 
 const LinkContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
+display: flex;
+justify-content: center;
 `
 
 const Link = styled.a`
-  padding-left: 50px;
-  padding-right: 50px;
   background-color: none;
   background-blend-mode: darken;
 `
 
 const LinkImg = styled.img`
-  height: 85px;
-  width: 100px;
+  width: 30%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
 `
 
 export const Social = () => {

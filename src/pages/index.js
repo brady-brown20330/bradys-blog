@@ -22,11 +22,11 @@ export const PostWrapper = styled.div`
 
 const Image = styled(Img)`
   max-height: 250px;
-  border-radius: 5px;
+  border-radius: 5px 5px 0px 0px;
 `;
 
 const Divider = styled.div`
-margin: 15px;
+  margin: 15px;
   padding: 15px;
   font-family: Arvo;
   font-weight: bolder;
