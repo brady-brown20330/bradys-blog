@@ -57,7 +57,7 @@ export default ({data}) => {
         siteLocale={siteLocale}
       />
       <Social />
-      <Divider>Have a Read Feller:</Divider>
+      <Divider>Here are some posts that I wrote:</Divider>
     <IndexWrapper>
       {data.allMdx.nodes.map(
         ({ id, excerpt, frontmatter, fields }) => (
