@@ -6,7 +6,7 @@ import Code from './src/components/Code';
 
 const components = {
   'p.inlineCode': props => (
-    <code style={{ backgroundColor: 'lightgray' }} {...props} />
+    <code style={{ backgroundColor: 'lightgray', fontSize: 'larger'}} {...props} />
   ),
   pre: ({ children: { props } }) => {
     if (props.mdxType === 'code') {
