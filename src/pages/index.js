@@ -6,7 +6,9 @@ import styled from 'styled-components';
 // import { createGlobalStyle } from 'styled-components'
 import SEO from 'react-seo-component';
 import { Layout } from '../components/Layout';
-import { Social } from '../components/Social'
+import { Social } from '../components/Social';
+import { Footer } from '../components/Footer';
+
 
 
 const IndexWrapper = styled.main`
@@ -78,6 +80,7 @@ export default ({data}) => {
         )
       )}
     </IndexWrapper>
+    <Footer />
   </Layout>
   );
 };

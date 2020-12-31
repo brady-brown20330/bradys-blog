@@ -26,7 +26,7 @@ const HeaderWrapper = styled.div`
 export const Header = ({ siteTitle, siteDescription }) => (
 <HeaderWrapper>
   <Link to="/">
-    <Title style={{}}>{siteTitle}</Title>
+    <Title>{siteTitle}</Title>
     <Subtitle>{siteDescription}</Subtitle>
   </Link>
 
