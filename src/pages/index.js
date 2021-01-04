@@ -66,7 +66,7 @@ export default ({data}) => {
           <div>
                       <Divider />
           <PostWrapper key={id}>
-            <Link to={fields.slug}>
+            <Link style={{textDecoration: 'none'}} to={fields.slug}>
             {
               !!frontmatter.cover ? (
                 <Image sizes={frontmatter.cover.childImageSharp.sizes} />
