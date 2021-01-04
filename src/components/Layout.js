@@ -10,14 +10,14 @@ const AppStyles = createGlobalStyle`
     align-items: center;
     justify-content: center;
     background-color:  #E5E5E5;
-    color: #14213D;
-    font-family: Arvo;
+    color: black;
+    font-family: Ubuntu;
   }
   a:link {
-    color: #14213D;
+    color: black;
   }
   a:visited {
-    color: #14213D;
+    color: black;
   }
 `
 const PostBodyWrapper = styled.div`

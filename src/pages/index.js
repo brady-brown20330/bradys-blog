@@ -30,7 +30,7 @@ const Image = styled(Img)`
 const Divider = styled.div`
   margin: 15px;
   padding: 15px;
-  font-family: Arvo;
+  font-family: Ubuntu;
   font-weight: bolder;
   display: flex;
   font-size: 36px;

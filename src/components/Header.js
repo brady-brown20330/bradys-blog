@@ -3,9 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Title = styled.h1`
-  font-family: Arvo;
-  font-weight: bolder;
-  text-decoration: none !important;
+  font-family: Bungee Shade;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -13,7 +11,7 @@ const Title = styled.h1`
 `
 
 const Subtitle = styled.p`
-  font-family: Arvo;
+  font-family: Ubuntu;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -25,7 +23,7 @@ const HeaderWrapper = styled.div`
 
 export const Header = ({ siteTitle, siteDescription }) => (
 <HeaderWrapper>
-  <Link to="/">
+  <Link style={{textDecoration: 'none'}}to="/">
     <Title>{siteTitle}</Title>
     <Subtitle>{siteDescription}</Subtitle>
   </Link>

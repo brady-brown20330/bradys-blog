@@ -49,7 +49,8 @@ module.exports = {
         fonts: [
           `Ubuntu`,
           `limelight`,
-          'Arvo' // you can also specify font weights and styles
+          'Arvo',
+          'Bungee Shade' // you can also specify font weights and styles
         ],
         display: 'swap'
       }
