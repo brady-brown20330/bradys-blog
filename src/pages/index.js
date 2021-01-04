@@ -96,7 +96,7 @@ query SITE_INDEX_QUERY {
       excerpt(pruneLength: 250)
       frontmatter {
         title
-        date(formatString: "YYYY MMMM Do")
+        date(formatString: "D MMMM YYYY")
         cover {
           publicURL
           childImageSharp {
