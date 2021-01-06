@@ -239,6 +239,8 @@ const path = require("path");
 app.listen(PORT, () => {
   console.log(`Hello, Your server is running on PORT: ${PORT}`);
 });
+
+app.use(express.static(path.join(__dirname, '../public')));
 ```
 
 Great! Final step now is to build out the src folder, which needs two files: App.jsx and index.js. Create these two files by running `touch src/App.jsx src/index.js`.
