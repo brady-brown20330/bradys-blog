@@ -39,7 +39,7 @@ export const Social = () => {
        return false;
      }}
     >
-      <LinkImg src="https://social-link-icons.s3.us-east-2.amazonaws.com/email-image.png" alt="Email Me!"/>
+      <LinkImg src="https://social-link-icons.s3.us-east-2.amazonaws.com/gmail-image.png" alt="Email Me!"/>
     </Link>
 
     <Link target="_blank" rel="noreferrer" href="https://www.strava.com/athletes/brady-brown">
