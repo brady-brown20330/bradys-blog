@@ -9,7 +9,7 @@ const AppStyles = createGlobalStyle`
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:  #E5E5E5;
+    background-color:  RGBA(0,111,175,0.62);
     color: black;
     font-family: Ubuntu;
   }
@@ -26,7 +26,10 @@ const PostBodyWrapper = styled.div`
   max-width: 85%;
   margin: auto;
   padding: 10px;
-`
+
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+
+  `
 export const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata();
   return (
