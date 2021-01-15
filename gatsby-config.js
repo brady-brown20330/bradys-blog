@@ -1,5 +1,5 @@
 const siteMetadata = {
-  title: `Brady Brown's Blog & Portfilio Site`,
+  title: `Brady's Notes`,
   description: `This website is a place for me to showcase things that I'm working on, and a side project to help practice programming.`,
   image: `/default-site-image.jpg`,
   siteUrl: `https://bradys-blog.netlify.app/`,
