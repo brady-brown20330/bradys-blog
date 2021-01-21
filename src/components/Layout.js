@@ -7,6 +7,7 @@ import { createGlobalStyle } from 'styled-components'
 const AppStyles = createGlobalStyle`
   body {
     display: flex;
+    align-items: center;
     background-color:  #F3F3F3;
     color: black;
     font-family: Ubuntu;
