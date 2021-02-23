@@ -18,6 +18,7 @@ const LinkImg = styled.img`
   display: block;
   margin: 0 auto;
 `
+// --> Look up react SVG social icons!!!
 
 export const Social = () => {
   return (
