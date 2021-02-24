@@ -8,7 +8,7 @@ const AppStyles = createGlobalStyle`
   body {
     display: flex;
     align-items: center;
-    background-color:  #F3F3F3;
+    background-color:  #667B7C;
     color: black;
     font-family: Ubuntu;
   }
