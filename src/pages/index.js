@@ -8,6 +8,7 @@ import SEO from 'react-seo-component';
 import { Layout } from '../components/Layout';
 import { Social } from '../components/Social';
 import {ThemeProvider} from "styled-components";
+import  {useDarkMode} from "../components/UseDarkMode"
 import { GlobalStyles } from "../components/GlobalStyles";
 import { lightTheme, darkTheme } from "../components/Themes";
 
@@ -20,9 +21,7 @@ const IndexWrapper = styled.main`
 const PostWrapper = styled.div`
   // padding: 15px;
   position: relative;
-  background: white;
   border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
-  color: white;
   box-shadow: 20px 20px rgba(0,0,0,.15);
   transition: all .4s ease;
   &:hover {
@@ -30,8 +29,6 @@ const PostWrapper = styled.div`
     box-shadow: 10px 10px rgba(0,0,0,.25);
   }
 `;
-
-
 
 const Image = styled(Img)`
   max-height: 250px;
@@ -92,21 +89,18 @@ export default function App({data}) {
             <Divider>Here are some posts that I wrote:</Divider>
           <IndexWrapper>
             {data.allMdx.nodes.map(
-              ({ id, excerpt, frontmatter, fields }) => (
-                <div>
-                            {/* <Divider /> */}
-                <PostWrapper key={id}>
-                  <Link style={{textDecoration: 'none'}} to={fields.slug}>
-                  {
-                    !!frontmatter.cover ? (
-                      <Image sizes={frontmatter.cover.childImageSharp.sizes} />
-                    ) : null}
-                    <h1>{frontmatter.title}</h1>
-                    <p>{frontmatter.date}</p>
-                    <p>{excerpt}</p>
-                  </Link>
-                </PostWrapper>
-                </div>
+              ({ id, excerpt, frontmatter, fields }) => ( 
+                      <PostWrapper key={id}>
+                        <Link style={{textDecoration: 'none'}} to={fields.slug}>
+                        {
+                          !!frontmatter.cover ? (
+                            <Image sizes={frontmatter.cover.childImageSharp.sizes} />
+                          ) : null}
+                          <h1>{frontmatter.title}</h1>
+                          <p>{frontmatter.date}</p>
+                          <p>{excerpt}</p>
+                        </Link>
+                      </PostWrapper>
               )
             )}
           </IndexWrapper>

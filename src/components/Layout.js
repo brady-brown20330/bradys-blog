@@ -19,11 +19,9 @@ const AppStyles = createGlobalStyle`
   }
 `
 const PostBodyWrapper = styled.div`
-  
   max-width: 85%;
   margin: auto;
   padding: 10px;
-
   `
 export const Layout = ({ children }) => {
   const { title, description } = useSiteMetadata();
