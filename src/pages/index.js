@@ -18,8 +18,20 @@ const IndexWrapper = styled.main`
 `;
 
 const PostWrapper = styled.div`
-  border-radius: 5px;
+  // padding: 15px;
+  position: relative;
+  background: white;
+  border-radius: 0% 0% 0% 0% / 0% 0% 0% 0% ;
+  color: white;
+  box-shadow: 20px 20px rgba(0,0,0,.15);
+  transition: all .4s ease;
+  &:hover {
+    border-radius: 0% 0% 50% 50% / 0% 0% 5% 5% ;
+    box-shadow: 10px 10px rgba(0,0,0,.25);
+  }
 `;
+
+
 
 const Image = styled(Img)`
   max-height: 250px;
@@ -63,7 +75,7 @@ export default ({data}) => {
       {data.allMdx.nodes.map(
         ({ id, excerpt, frontmatter, fields }) => (
           <div>
-                      <Divider />
+                      {/* <Divider /> */}
           <PostWrapper key={id}>
             <Link style={{textDecoration: 'none'}} to={fields.slug}>
             {
@@ -79,7 +91,7 @@ export default ({data}) => {
         )
       )}
     </IndexWrapper>
-    <Footer />
+    {/* <Footer /> */}
   </Layout>
   );
 };
